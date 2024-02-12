@@ -2,7 +2,7 @@
   <input type=text/>
 </div>
 <%= turbo_frame_tag 'work_queue' do %>
-  <%= form_with url: work_queue_path, method: :get do %>
+  <%= form_with url: work_queue_path, data: { 'turbo-stream': true }, method: :get do %>
     <%= select_tag :company_id, options_from_collection_for_select(Company.all, :id, :name, params[:company_id]),
                    include_blank: '', class: "form-select", onchange: "this.form.requestSubmit()" %>
   <% end %>

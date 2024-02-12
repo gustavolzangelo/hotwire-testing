@@ -6,7 +6,7 @@ class WorkQueueController < ApplicationController
     respond_to do |format|
       format.html
       format.turbo_stream {
-        render turbo_stream: turbo_stream.replace("follow_ups_frame", partial: "work_queue/follow_ups_table", locals: { follow_ups: @follow_ups })
+        render turbo_stream: turbo_stream.replace("work_queue", partial: "work_queue/follow_ups_table", locals: { follow_ups: @follow_ups })
       }
     end
   end

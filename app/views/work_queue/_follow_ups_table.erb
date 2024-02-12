@@ -1,0 +1,10 @@
+<!-- app/views/work_queue/_follow_ups_table.html.erb -->
+<table>
+  <% follow_ups.each do |follow_up| %>
+    <tr>
+      <td><%= follow_up.name %></td>
+      <td><%= follow_up.company.name %></td>
+      <td><%= follow_up.created_at %></td>
+    </tr>
+  <% end %>
+</table>
